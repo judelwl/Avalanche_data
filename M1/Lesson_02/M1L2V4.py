@@ -10,6 +10,7 @@ load_dotenv()
 # Initialize OpenAI client
 client = openai.OpenAI()
 
+# cache data so that the system caches the response and does not need to always look for the answers anew
 @st.cache_data
 def get_response(user_prompt, temperature):
     response = client.responses.create(
